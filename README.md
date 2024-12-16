@@ -6,7 +6,9 @@
 
 ### Abstract
 
-This repository accompanies the paper *Investigating Data Efficient Methods for Enhancing Model Generalization via Dataset Cartography, Augmentation, and Perturbation Techniques* which explores data-efficient methods to enhance model generalization using [Dataset Cartography](https://arxiv.org/abs/2009.10795), data augmentation, and [Sampling with Perturbation Uncertainty Quantification (SPUQ)](https://arxiv.org/abs/2403.02509). Using the `google/electra-small-discriminator` model, we evaluate the impact of training on subsets of the SQuAD dataset identified using both intrasample variability and intersample variability (SPUQ) metrics and augmenting these subsets with paraphrased and adversarial examples. Our findings demonstrate that targeting high-variability examples and applying augmentation techniques can improve out-of-domain performance while maintaining competitive in-domain accuracy. These results highlight the potential for leveraging training dynamics and intersample uncertainty quantification to improve model robustness in a data efficient manner.
+This repository accompanies the paper *Investigating Data Efficient Methods for Enhancing Model Generalization via Dataset Cartography, Augmentation, and Perturbation Techniques*. This work investigates data-efficient strategies for improving generalization using [Dataset Cartography](https://arxiv.org/abs/2009.10795), augmentation, and perturbation-based uncertainty quantification techniques. We begin by establishing baseline performance using the `google/electra-small-discriminator` model trained on the [SQuAD](https://huggingface.co/datasets/rajpurkar/squad) dataset. We then extend the traditional Dataset Cartography calculation of intra-sample confidence and variability, derived from training dynamics, to also include inter-sample confidence/variability using [Sampling with Perturbation for Uncertainty Quantification (SPUQ)](https://arxiv.org/abs/2403.02509), allowing us to also capture a measure of epistemic uncertainty. Both metrics are then used to map training examples in terms of their variability, allowing us to select subsets of examples for training, focusing on those with high variability. These subsets are tested with multiple data augmentation strategies and used to train separate models, which are evaluated on both in-domain and out-of-domain performance. In total we evaluate 20 different experimental configurations, including training on subsets selected by intra-sample, inter-sample, and aggregated variability, with and without data augmentation.
+
+We find that while training on the full dataset yields the strongest in-domain performance, targeting subsets of highly variable (ambiguous) examples outperforms random subsets of equivalent size on both in-domain and out-of-domain evaluations, with the most significant gains observed in the latter. Data augmentation alone did not improve in-domain performance but did result in performance improvements for out-of-domain evaluation. The most substantial improvements were achieved by training on subsets selected by aggregated variability, which combines intra-sample and inter-sample uncertainty metrics, and augmenting with both paraphrased and adversarial examples. These findings suggest that focusing on challenging examples and augmenting training data is a data efficient method for enhancing model robustness and generalization to out-of-domain distribution shifts.
 
 ---
 
@@ -36,7 +38,7 @@ This project includes a Docker container for easily reproducing experiment resul
     ```
 
 2. **Run the Docker Container**:
-    The container is ready to use and includes all necessary dependencies for running the scripts. Ensure that required environment variables are set (see below).
+    The container is ready to use and includes all necessary dependencies for running the scripts. Note that none of the environments are required and the script can be run with defaults however, it is recommended to modify the batch size to fit your hardware configuration.
 
     Example:
     ```bash
@@ -95,7 +97,7 @@ To set up a local environment:
 1. Clone this repository:
     ```bash
     git clone https://github.com/krohling/spuq-cartography
-    cd https://github.com/krohling/spuq-cartography
+    cd spuq-cartography
     ```
 
 2. Create a virtual environment and install dependencies:
