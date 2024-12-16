@@ -1,0 +1,188 @@
+[
+    {
+        "run_name": "full_dataset_aug_none",
+        "augmentation_datasets": [],
+        "dataset_config": []
+    },
+    {
+        "run_name": "full_dataset_aug_paraphrasing",
+        "augmentation_datasets": [
+            "kevin510/squad_paraphrasing_5"
+        ],
+        "dataset_config": []
+    },
+    {
+        "run_name": "full_dataset_aug_adversarial",
+        "augmentation_datasets": [
+            "kevin510/squad_adversarial"
+        ],
+        "dataset_config": []
+    },
+    {
+        "run_name": "full_dataset_aug_both",
+        "augmentation_datasets": [
+            "kevin510/squad_paraphrasing_5",
+            "kevin510/squad_adversarial"
+        ],
+        "dataset_config": []
+    },
+
+
+
+
+
+    {
+        "run_name": "random_33_aug_none",
+        "augmentation_datasets": [],
+        "dataset_config": [
+            {"metric": "random", "percentage": 0.33}
+        ]
+    },
+    {
+        "run_name": "random_33_aug_paraphrasing",
+        "augmentation_datasets": [
+            "kevin510/squad_paraphrasing_5"
+        ],
+        "dataset_config": [
+            {"metric": "random", "percentage": 0.33}
+        ]
+    },
+    {
+        "run_name": "random_33_aug_adversarial",
+        "augmentation_datasets": [
+            "kevin510/squad_adversarial"
+        ],
+        "dataset_config": [
+            {"metric": "random", "percentage": 0.33}
+        ]
+    },
+    {
+        "run_name": "random_33_aug_both",
+        "augmentation_datasets": [
+            "kevin510/squad_adversarial",
+            "kevin510/squad_paraphrasing_5"
+        ],
+        "dataset_config": [
+            {"metric": "random", "percentage": 0.33}
+        ]
+    },
+
+
+
+
+
+    {
+        "run_name": "intrasample_confidence_std_high_aug_none",
+        "augmentation_datasets": [],
+        "dataset_config": [
+            {"metric": "intrasample_confidence_std", "sort": "high", "percentage": 0.33}
+        ]
+    },
+    {
+        "run_name": "intrasample_confidence_std_high_aug_paraphrasing",
+        "augmentation_datasets": [
+            "kevin510/squad_paraphrasing_5"
+        ],
+        "dataset_config": [
+            {"metric": "intrasample_confidence_std", "sort": "high", "percentage": 0.33}
+        ]
+    },
+    {
+        "run_name": "intrasample_confidence_std_high_aug_adversarial",
+        "augmentation_datasets": [
+            "kevin510/squad_adversarial"
+        ],
+        "dataset_config": [
+            {"metric": "intrasample_confidence_std", "sort": "high", "percentage": 0.33}
+        ]
+    },
+    {
+        "run_name": "intrasample_confidence_std_high_aug_both",
+        "augmentation_datasets": [
+            "kevin510/squad_adversarial",
+            "kevin510/squad_paraphrasing_5"
+        ],
+        "dataset_config": [
+            {"metric": "intrasample_confidence_std", "sort": "high", "percentage": 0.33}
+        ]
+    },
+
+
+
+
+    {
+        "run_name": "intersample_confidence_std_high_aug_none",
+        "augmentation_datasets": [],
+        "dataset_config": [
+            {"metric": "intersample_confidence_std", "sort": "high", "percentage": 0.33}
+        ]
+    },
+    {
+        "run_name": "intersample_confidence_std_high_aug_paraphrasing",
+        "augmentation_datasets": [
+            "kevin510/squad_paraphrasing_5"
+        ],
+        "dataset_config": [
+            {"metric": "intersample_confidence_std", "sort": "high", "percentage": 0.33}
+        ]
+    },
+    {
+        "run_name": "intersample_confidence_std_high_aug_adversarial",
+        "augmentation_datasets": [
+            "kevin510/squad_adversarial"
+        ],
+        "dataset_config": [
+            {"metric": "intersample_confidence_std", "sort": "high", "percentage": 0.33}
+        ]
+    },
+    {
+        "run_name": "intersample_confidence_std_high_aug_both",
+        "augmentation_datasets": [
+            "kevin510/squad_adversarial",
+            "kevin510/squad_paraphrasing_5"
+        ],
+        "dataset_config": [
+            {"metric": "intersample_confidence_std", "sort": "high", "percentage": 0.33}
+        ]
+    },
+
+
+
+
+
+    {
+        "run_name": "agg_confidence_std_high_aug_none",
+        "augmentation_datasets": [],
+        "dataset_config": [
+            {"metric": "agg_confidence_std", "sort": "high", "percentage": 0.33}
+        ]
+    },
+    {
+        "run_name": "agg_confidence_std_high_aug_paraphrasing",
+        "augmentation_datasets": [
+            "kevin510/squad_paraphrasing_5"
+        ],
+        "dataset_config": [
+            {"metric": "agg_confidence_std", "sort": "high", "percentage": 0.33}
+        ]
+    },
+    {
+        "run_name": "agg_confidence_std_high_aug_adversarial",
+        "augmentation_datasets": [
+            "kevin510/squad_adversarial"
+        ],
+        "dataset_config": [
+            {"metric": "agg_confidence_std", "sort": "high", "percentage": 0.33}
+        ]
+    },
+    {
+        "run_name": "agg_confidence_std_high_aug_both",
+        "augmentation_datasets": [
+            "kevin510/squad_adversarial",
+            "kevin510/squad_paraphrasing_5"
+        ],
+        "dataset_config": [
+            {"metric": "agg_confidence_std", "sort": "high", "percentage": 0.33}
+        ]
+    }
+]

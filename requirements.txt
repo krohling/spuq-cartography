@@ -1,0 +1,14 @@
+matplotlib
+seaborn
+pandas
+numpy
+accelerate
+datasets
+evaluate
+torch
+tqdm
+transformers
+rouge-score
+bert-score
+wandb
+openai
